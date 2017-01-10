@@ -4,7 +4,7 @@
 // @include        https://torrentz2.eu/*
 // @include        https://www.torrentz2.eu/*
 // @version        1.0.0
-// @namespace      awm4j/userscripts/maglinkstorrentz2.js
+// @namespace      https://raw.githubusercontent.com/awm4j/userscripts/master/maglinkstorrentz2.js
 // ==/UserScript==
 
 
