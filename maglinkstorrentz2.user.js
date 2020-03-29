@@ -3,7 +3,7 @@
 // @description    Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
 // @include        https://torrentz2.eu/*
 // @include        https://www.torrentz2.eu/*
-// @version        1.0.0
+// @version        1.0.1
 // @namespace      https://raw.githubusercontent.com/awm4j/userscripts/master/maglinkstorrentz2.user.js
 // ==/UserScript==
 
@@ -29,14 +29,31 @@ if ((url = location.href.match(/torrentz2\.(eu|com|org|net|info)\/([a-f0-9]{40})
             trackers+= '&tr=' + trackerElements[i].getElementsByTagName("dt")[0].innerText;
             
         }
-
+		
 		
 		// default trackers
 		if (trackers == '' || trackers.length <= 0) {
 			console.log('Failed to load trackers, using some default trackers.');
-			trackers = '&tr=http://tracker.openbittorrent.com/announce'+
-				'&tr=http://tracker.publicbt.com:80/announce'+
-				'&tr=http://denis.stalker.h3q.com:6969/announce';
+			trackers = 	'&tr=udp://tracker.opentrackr.org:1337/announce'+
+					'&tr=udp://p4p.arenabg.com:1337/announce'+
+					'&tr=udp://9.rarbg.to:2710/announce'+
+					'&tr=udp://9.rarbg.me:2710/announce'+
+					'&tr=udp://tracker.leechers-paradise.org:6969/announce'+
+					'&tr=udp://exodus.desync.com:6969/announce'+
+					'&tr=udp://open.stealth.si:80/announce'+
+					'&tr=udp://tracker.cyberia.is:6969/announce'+
+					'&tr=udp://tracker.tiny-vps.com:6969/announce'+
+					'&tr=udp://tracker.sbsub.com:2710/announce'+
+					'&tr=udp://retracker.lanta-net.ru:2710/announce'+
+					'&tr=udp://tracker.torrent.eu.org:451/announce'+
+					'&tr=udp://tracker.moeking.me:6969/announce'+
+					'&tr=http://tracker.nyap2p.com:8080/announce'+
+					'&tr=udp://tracker3.itzmx.com:6961/announce'+
+					'&tr=http://tracker1.itzmx.com:8080/announce'+
+					'&tr=udp://bt2.archive.org:6969/announce'+
+					'&tr=udp://bt1.archive.org:6969/announce'+
+					'&tr=udp://ipv4.tracker.harry.lu:80/announce'+
+					'&tr=udp://explodie.org:6969/announce';
 		}
 		
 		// read title
